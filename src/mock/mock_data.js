@@ -54,7 +54,7 @@ export const mockData = {
           "name": "学术论文配色库",
           "url": "https://color.cybersecur1ty.de",
           "description": "学术论文配色库",
-          "icon": "/sitelogo/palette.ico"
+          "icon": "/sitelogo/palette_icon.ico"
         }
       ]
     },
