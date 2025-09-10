@@ -57,6 +57,13 @@ export const mockData = {
           "icon": "https://dblp.org/img/dblp.icon.192x192.png"
         },
         {
+          "id": "site-1757511883821",
+          "name": "中国知网",
+          "url": "https://www.cnki.net/",
+          "description": "中文论文点这里",
+          "icon": "https://piccache.cnki.net/kns/images/gb/logo.gif"
+        },
+        {
           "id": "site-1757511745318",
           "name": "中国专利公布公告",
           "url": "http://epub.cnipa.gov.cn",
