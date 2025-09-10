@@ -196,7 +196,7 @@ export const mockData = {
           "id": "site-1757502109707",
           "name": "NodeLoc",
           "url": "https://www.nodeloc.com",
-          "description": "",
+          "description": "自由、平等、友好、开放、有趣的交流社区",
           "icon": "https://s.rmimg.com/original/2X/a/a4f25429f7ad6bdc67647367a0e9fa033d0b980d.svg"
         },
         {
