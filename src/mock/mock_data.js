@@ -211,7 +211,7 @@ export const mockData = {
           "name": "NodeLoc",
           "url": "https://www.nodeloc.com",
           "description": "自由、平等、友好、开放、有趣",
-          "icon": "https://s.rmimg.com/original/2X/a/a4f25429f7ad6bdc67647367a0e9fa033d0b980d.svg"
+          "icon": "https://freex.nodeloc.com/storage/logo.webp"
         },
         {
           "id": "v2ex",
