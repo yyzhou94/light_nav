@@ -61,7 +61,7 @@ export const mockData = {
           "name": "Arxiv",
           "url": "https://arxiv.org",
           "description": "预印论文点这里",
-          "icon": "https://info.arxiv.org/brand/images/brand-logomark-primary-large.jpg"
+          "icon": "https://avatars.githubusercontent.com/u/45442578?s=200&v=4"
         },
         {
           "id": "site-1757511883821",
