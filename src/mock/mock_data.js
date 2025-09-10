@@ -155,6 +155,13 @@ export const mockData = {
           "url": "https://www.huaweicloud.com",
           "description": "华为云计算服务",
           "icon": "/sitelogo/www.huaweicloud.com.ico"
+        },
+        {
+          "id": "site-1757502443881",
+          "name": "Netcup",
+          "url": "https://www.netcup.com/en/",
+          "description": "固执、拖拉的德国佬",
+          "icon": "https://netcup.cafe/system/accounts/avatars/112/710/068/814/599/782/original/de4b304b31f0b8f6.png"
         }
       ]
     },
