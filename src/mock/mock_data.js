@@ -125,7 +125,7 @@ export const mockData = {
           "name": "GitHub Copilot",
           "url": "https://github.com/features/copilot",
           "description": "AI代码助手",
-          "icon": "/sitelogo/github.com.ico"
+          "icon": "https://cdn.overleaf.com/img/third-party-icons/github.svg"
         },
         {
           "id": "cursor",
@@ -211,7 +211,7 @@ export const mockData = {
           "name": "Github",
           "url": "https://github.com/",
           "description": "全球最大同性交友平台",
-          "icon": "/sitelogo/github.com.ico"
+          "icon": "https://cdn.overleaf.com/img/third-party-icons/github.svg"
         },
         {
           "id": "stackoverflow",
