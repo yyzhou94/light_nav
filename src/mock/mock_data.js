@@ -69,6 +69,13 @@ export const mockData = {
           "url": "https://color.cybersecur1ty.de",
           "description": "学术论文配色库",
           "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/sitelogo/palette.ico"
+        },
+        {
+          "id": "site-1757511745318",
+          "name": "中国专利公布公告",
+          "url": "http://epub.cnipa.gov.cn",
+          "description": "专利检索点这里",
+          "icon": "https://tysf.cponline.cnipa.gov.cn/am/img/logo%20-%20header.da3410d0.png"
         }
       ]
     },
