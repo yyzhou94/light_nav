@@ -7,6 +7,13 @@ export const mockData = {
       "order": 0,
       "sites": [
         {
+          "id": "site-1757494744952",
+          "name": "东南大学",
+          "url": "https://www.seu.edu.cn/",
+          "description": "",
+          "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/logo.png"
+        },
+        {
           "id": "github",
           "name": "GitHub",
           "url": "https://github.com",
@@ -33,11 +40,11 @@ export const mockData = {
           "description": "学术论文配色库"
         },
         {
-          "id": "site-1757494744952",
-          "name": "东南大学",
-          "url": "https://www.seu.edu.cn/",
+          "id": "site-1757494926253",
+          "name": "信息服务门户",
+          "url": "https://i.seu.edu.cn/",
           "description": "",
-          "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/logo.png"
+          "icon": "https://i.seu.edu.cn/oss/iconLab/2023-02-20/%E7%A7%91%E7%A0%94%E6%88%90%E6%9E%9C%E8%AE%A4%E9%A2%86%E5%B9%B3%E5%8F%B0-1077231155844911104.png?sign=sbQrLkaVbcAVer9kWCBq1ceGvWQRDiQAnJMoDLJyPXI1Dk1ijMGgMb1S6fxPDeOF"
         }
       ]
     },
