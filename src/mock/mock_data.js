@@ -162,6 +162,13 @@ export const mockData = {
           "url": "https://www.netcup.com/en/",
           "description": "固执、拖拉的德国佬",
           "icon": "https://netcup.cafe/system/accounts/avatars/112/710/068/814/599/782/original/de4b304b31f0b8f6.png"
+        },
+        {
+          "id": "site-1757502722681",
+          "name": "GreenCloud",
+          "url": "https://greencloudvps.com/",
+          "description": "爱是一道光",
+          "icon": "https://pbs.twimg.com/profile_images/1707313098175250432/F4iM1Dr__400x400.jpg"
         }
       ]
     },
