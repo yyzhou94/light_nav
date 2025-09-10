@@ -26,32 +26,6 @@ export const mockData = {
           "url": "https://nic.seu.edu.cn/",
           "description": "",
           "icon": "https://i.seu.edu.cn/oss/iconLab/2023-02-20/%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1-1077231973244899328.png?sign=V3pE9BxCtppDH0RgbP_JFnamb-EKPVLwQYb25BzTaK20jkHgV9vPJu8e2mGQEW74"
-        },
-        {
-          "id": "github",
-          "name": "GitHub",
-          "url": "https://github.com",
-          "description": "代码托管平台",
-          "icon": "/sitelogo/github.com.ico"
-        },
-        {
-          "id": "curlconverter",
-          "name": "curl converter",
-          "url": "https://curlconverter.com/",
-          "description": "curl命令转换工具",
-          "icon": "/sitelogo/curlconverter.com.ico"
-        },
-        {
-          "id": "site-1757492914328",
-          "name": "全球网络测量",
-          "url": "https://measure.cybersecur1ty.de",
-          "description": "与光同程"
-        },
-        {
-          "id": "site-1757492965019",
-          "name": "学术论文配色库",
-          "url": "https://color.cybersecur1ty.de",
-          "description": "学术论文配色库"
         }
       ]
     },
@@ -162,13 +136,6 @@ export const mockData = {
       "order": 3,
       "sites": [
         {
-          "id": "github",
-          "name": "GitHub",
-          "url": "https://github.com",
-          "description": "代码托管平台",
-          "icon": "/sitelogo/github.com.ico"
-        },
-        {
           "id": "vscode",
           "name": "VS Code",
           "url": "https://code.visualstudio.com",
@@ -202,6 +169,25 @@ export const mockData = {
           "url": "https://www.oracle.com/java/technologies/downloads/",
           "description": "Oracle官方Java下载",
           "icon": "/sitelogo/www.oracle.com.ico"
+        },
+        {
+          "id": "site-1757492914328",
+          "name": "全球网络测量",
+          "url": "https://measure.cybersecur1ty.de",
+          "description": "与光同程"
+        },
+        {
+          "id": "site-1757492965019",
+          "name": "学术论文配色库",
+          "url": "https://color.cybersecur1ty.de",
+          "description": "学术论文配色库"
+        },
+        {
+          "id": "curlconverter",
+          "name": "curl converter",
+          "url": "https://curlconverter.com/",
+          "description": "curl命令转换工具",
+          "icon": "/sitelogo/curlconverter.com.ico"
         }
       ]
     },
