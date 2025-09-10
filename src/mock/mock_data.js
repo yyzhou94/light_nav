@@ -168,7 +168,7 @@ export const mockData = {
           "id": "site-1757498796231",
           "name": "Github",
           "url": "https://github.com/",
-          "description": "全球最大的同性交友平台",
+          "description": "全球最大同性交友平台",
           "icon": "/sitelogo/github.com.ico"
         },
         {
@@ -281,7 +281,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "与光同程",
-  "_fileSha": "dad0caec2f88b94872b8058b0f7c078bbbc82909",
-  "search": "baidu"
+  "title": "与光同程"
 }
