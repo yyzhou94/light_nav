@@ -90,6 +90,13 @@ export const mockData = {
           "url": "https://color.cybersecur1ty.de",
           "description": "学术论文配色库",
           "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/sitelogo/palette.ico"
+        },
+        {
+          "id": "site-1757513111712",
+          "name": "Overleaf",
+          "url": "https://www.overleaf.com",
+          "description": "组队写论文点这里",
+          "icon": ""
         }
       ]
     },
