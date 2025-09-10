@@ -10,28 +10,28 @@ export const mockData = {
           "id": "site-1757494744952",
           "name": "东南大学",
           "url": "https://www.seu.edu.cn/",
-          "description": "",
+          "description": "人文关怀毫无六朝遗韵",
           "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/logo.png"
         },
         {
           "id": "site-1757494926253",
           "name": "信息服务门户",
           "url": "https://i.seu.edu.cn/",
-          "description": "",
+          "description": "财务报销点这里",
           "icon": "https://i.seu.edu.cn/oss/iconLab/2023-02-20/%E7%A7%91%E7%A0%94%E6%88%90%E6%9E%9C%E8%AE%A4%E9%A2%86%E5%B9%B3%E5%8F%B0-1077231155844911104.png?sign=sbQrLkaVbcAVer9kWCBq1ceGvWQRDiQAnJMoDLJyPXI1Dk1ijMGgMb1S6fxPDeOF"
         },
         {
           "id": "site-1757494988906",
           "name": "网信中心",
           "url": "https://nic.seu.edu.cn/",
-          "description": "",
+          "description": "装软件点这里",
           "icon": "https://i.seu.edu.cn/oss/iconLab/2023-02-20/%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1-1077231973244899328.png?sign=V3pE9BxCtppDH0RgbP_JFnamb-EKPVLwQYb25BzTaK20jkHgV9vPJu8e2mGQEW74"
         },
         {
           "id": "site-1757495557665",
           "name": "网安学院",
           "url": "https://cyber.seu.edu.cn/",
-          "description": "",
+          "description": "光の根据地",
           "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/cs_logo.png"
         }
       ]
@@ -46,14 +46,14 @@ export const mockData = {
           "id": "site-1757497852836",
           "name": "谷歌学术",
           "url": "https://scholar.google.com/",
-          "description": "",
+          "description": "站在巨人的肩膀上",
           "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
         },
         {
           "id": "site-1757497874306",
           "name": "DBLP",
           "url": "https://dblp.uni-trier.de/",
-          "description": "",
+          "description": "计算机类英文文献检索数据库",
           "icon": "https://dblp.org/img/dblp.icon.192x192.png"
         },
         {
