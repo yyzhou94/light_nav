@@ -58,7 +58,7 @@ export const mockData = {
         },
         {
           "id": "site-1757512573385",
-          "name": "Arxiv",
+          "name": "arXiv",
           "url": "https://arxiv.org",
           "description": "预印论文点这里",
           "icon": "https://avatars.githubusercontent.com/u/45442578?s=200&v=4"
