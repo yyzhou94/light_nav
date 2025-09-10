@@ -60,7 +60,7 @@ export const mockData = {
           "id": "site-1757492914328",
           "name": "全球网络测量",
           "url": "https://measure.cybersecur1ty.de",
-          "description": "与光同程",
+          "description": "用光点亮全球",
           "icon": "/sitelogo/measurement.ico"
         },
         {
