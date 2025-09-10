@@ -57,6 +57,13 @@ export const mockData = {
           "icon": "https://dblp.org/img/dblp.icon.192x192.png"
         },
         {
+          "id": "site-1757512573385",
+          "name": "Arxiv",
+          "url": "https://arxiv.org",
+          "description": "预印论文点这里",
+          "icon": "https://info.arxiv.org/brand/images/brand-logomark-primary-large.jpg"
+        },
+        {
           "id": "site-1757511883821",
           "name": "中国知网",
           "url": "https://www.cnki.net/",
@@ -83,13 +90,6 @@ export const mockData = {
           "url": "https://color.cybersecur1ty.de",
           "description": "学术论文配色库",
           "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/sitelogo/palette.ico"
-        },
-        {
-          "id": "site-1757512573385",
-          "name": "Arxiv",
-          "url": "https://arxiv.org",
-          "description": "预印论文点这里",
-          "icon": "https://info.arxiv.org/brand/images/brand-logomark-primary-large.jpg"
         }
       ]
     },
