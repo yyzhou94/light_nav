@@ -2,8 +2,8 @@ export const mockData = {
   "categories": [
     {
       "id": "my-favorites",
-      "name": "我的常用",
-      "icon": "💥",
+      "name": "校内常用",
+      "icon": "💼",
       "order": 0,
       "sites": [
         {
@@ -31,6 +31,13 @@ export const mockData = {
           "name": "学术论文配色库",
           "url": "https://color.cybersecur1ty.de",
           "description": "学术论文配色库"
+        },
+        {
+          "id": "site-1757494744952",
+          "name": "东南大学",
+          "url": "https://www.seu.edu.cn/",
+          "description": "",
+          "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/logo.png"
         }
       ]
     },
@@ -436,7 +443,5 @@ export const mockData = {
       ]
     }
   ],
-  "title": "与光同程",
-  "_fileSha": "37d8043e1a4d96c7320f2b5453a656379b826060",
-  "search": "baidu"
+  "title": "与光同程"
 }
