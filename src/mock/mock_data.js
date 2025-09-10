@@ -26,6 +26,13 @@ export const mockData = {
           "url": "https://nic.seu.edu.cn/",
           "description": "",
           "icon": "https://i.seu.edu.cn/oss/iconLab/2023-02-20/%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1-1077231973244899328.png?sign=V3pE9BxCtppDH0RgbP_JFnamb-EKPVLwQYb25BzTaK20jkHgV9vPJu8e2mGQEW74"
+        },
+        {
+          "id": "site-1757495557665",
+          "name": "网安学院",
+          "url": "https://cyber.seu.edu.cn/",
+          "description": "",
+          "icon": "https://wget.la/https://raw.githubusercontent.com/yyzhou94/light_nav/master/public/cs_logo.png"
         }
       ]
     },
