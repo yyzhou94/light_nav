@@ -61,7 +61,7 @@ export const mockData = {
           "name": "中国知网",
           "url": "https://www.cnki.net/",
           "description": "中文论文点这里",
-          "icon": "https://piccache.cnki.net/kns/images/gb/logo.gif"
+          "icon": "https://www.aigc.cn/wp-content/uploads/2023/12/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20231201120020.jpg"
         },
         {
           "id": "site-1757511745318",
