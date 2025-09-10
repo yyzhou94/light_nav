@@ -96,7 +96,7 @@ export const mockData = {
           "name": "Overleaf",
           "url": "https://www.overleaf.com",
           "description": "组队写论文点这里",
-          "icon": " https://www.overleaf.com/favicon.svg"
+          "icon": "https://images.ctfassets.net/nrgyaltdicpt/451Wbu94Q1X3M5QIk74QLL/08e42061e965fb152a329ded74cdc3ce/overleaf-o-logo-primary.svg"
         }
       ]
     },
