@@ -193,6 +193,13 @@ export const mockData = {
           "icon": "/sitelogo/www.nodeseek.com.ico"
         },
         {
+          "id": "site-1757502109707",
+          "name": "NodeLoc",
+          "url": "https://www.nodeloc.com",
+          "description": "",
+          "icon": "https://s.rmimg.com/original/2X/a/a4f25429f7ad6bdc67647367a0e9fa033d0b980d.svg"
+        },
+        {
           "id": "v2ex",
           "name": "V2EX",
           "url": "https://www.v2ex.com",
