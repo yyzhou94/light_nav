@@ -459,33 +459,35 @@ const testImage = async (imageUrl) => {
 
 // 下载图标并缓存
 const downloadAndCacheIcon = async (iconUrl, domain) => {
-  console.log(`📥 开始通过代理下载图标: ${iconUrl}`)
+  console.log(`📥 开始下载图标: ${iconUrl}`)
 
-  // 将 iconUrl 替换为我们自己的代理函数地址
-  // 这里的 iconUrl 实际上是第三方服务的URL，我们只需要 domain
-  const proxyUrl = `/icon-proxy?domain=${encodeURIComponent(domain)}`;
-
+  // 优先尝试fetch直接下载
   try {
-    // 请求我们自己的代理函数
-    const response = await fetch(proxyUrl);
+    const response = await fetch(iconUrl, {
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Accept': 'image/*,*/*;q=0.8'
+      }
+    })
 
     if (!response.ok) {
-      throw new Error(`代理服务错误: HTTP ${response.status}`);
+      throw new Error(`HTTP ${response.status}`)
     }
 
-    const arrayBuffer = await response.arrayBuffer();
+    const arrayBuffer = await response.arrayBuffer()
 
     if (arrayBuffer.byteLength < 100) {
-      throw new Error(`图标文件过小 (${arrayBuffer.byteLength} bytes)`);
+      throw new Error(`图标文件过小 (${arrayBuffer.byteLength} bytes)`)
     }
 
     // 创建本地文件路径和文件名
-    const fileName = `${domain}.ico`;
-    const localPath = `/sitelogo/${fileName}`;
+    const fileName = `${domain}.ico`
+    const localPath = `/sitelogo/${fileName}`
 
     // 创建data URL用于编辑期间的预览
-    const blob = new Blob([arrayBuffer]); // 移除了 type，让浏览器自动识别
-    const dataUrl = URL.createObjectURL(blob);
+    const blob = new Blob([arrayBuffer], { type: 'image/x-icon' })
+    const dataUrl = URL.createObjectURL(blob)
 
     // 将图标数据缓存到内存中，等待后续上传
     pendingIcons.value.set(domain, {
@@ -493,20 +495,27 @@ const downloadAndCacheIcon = async (iconUrl, domain) => {
       fileName,
       localPath,
       domain
-    });
+    })
 
     // 缓存预览URL，用于编辑期间显示
-    const oldPreview = iconPreviews.value.get(localPath);
+    const oldPreview = iconPreviews.value.get(localPath)
     if (oldPreview) {
-      URL.revokeObjectURL(oldPreview);
+      URL.revokeObjectURL(oldPreview)
     }
-    iconPreviews.value.set(localPath, dataUrl);
+    iconPreviews.value.set(localPath, dataUrl)
 
-    console.log(`✅ 代理下载成功: ${localPath}，文件大小: ${arrayBuffer.byteLength} bytes`);
-    return localPath;
-  } catch (error) {
-    console.error(`❌ 代理下载失败: ${error.message}`);
-    throw error; // 抛出错误，让 tryFallbackServices 知道失败了
+    console.log(`✅ Fetch下载成功: ${localPath}，文件大小: ${arrayBuffer.byteLength} bytes`)
+    return localPath
+  } catch (fetchError) {
+    console.warn(`⚠️ Fetch下载失败: ${fetchError.message}，尝试Canvas方法`)
+
+    // 如果fetch失败，使用Canvas方法
+    // try {
+    //   return await downloadIconViaCanvas(iconUrl, domain)
+    // } catch (canvasError) {
+    //   console.error(`❌ Canvas下载也失败: ${canvasError.message}`)
+    //   throw new Error(`所有下载方法都失败: Fetch(${fetchError.message}), Canvas(${canvasError.message})`)
+    // }
   }
 }
 
