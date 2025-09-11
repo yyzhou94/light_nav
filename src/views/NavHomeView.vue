@@ -214,6 +214,12 @@
       </div>
     </main>
   </div>
+
+  <transition name="fade">
+    <button v-if="showBackToTop" @click="scrollToTop" class="back-to-top-btn" title="返回顶部">
+      <svg t="1757578927733" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="30760" width="200" height="200"><path d="M832.7168 433.28L539.8016 79.232a33.8944 33.8944 0 0 0-56.32 0L190.592 433.28a62.5152 62.5152 0 0 0 0 72.704h144.384a64.9728 64.9728 0 0 0-2.3552 15.104v232.448a46.7712 46.7712 0 0 0 39.7824 51.456h278.4256a46.7456 46.7456 0 0 0 39.7568-51.456v-232.448a66.3296 66.3296 0 0 0-2.3296-15.104h144.384a62.5152 62.5152 0 0 0 0.0768-72.704z m-193.5104 423.168H384a51.2 51.2 0 0 0-51.2 51.2v0.768a51.2 51.2 0 0 0 51.2 51.2h255.2064a51.2 51.2 0 0 0 51.2-51.2v-0.768a51.2 51.2 0 0 0-51.2-51.2z" fill="#ffffff" p-id="30761"></path></svg>
+    </button>
+  </transition>
 </template>
 
 <script setup>
@@ -228,6 +234,8 @@ import duckLogo from '@/assets/duck.png'
 // 导入GitHub logo
 import githubLogo from '@/assets/github.png'
 
+
+
 // 使用导航API
 const { categories, title, defaultSearchEngine, loading, error, fetchCategories } = useNavigation()
 
@@ -238,6 +246,7 @@ const themeStore = useThemeStore()
 const searchQuery = ref('') // 搜索查询
 const selectedEngine = ref('bing') // 选中的搜索引擎，初始值会在组件挂载后更新
 const showMobileMenu = ref(false) // 移动端菜单显示状态
+const showBackToTop = ref(false); // 是否显示返回顶部按钮
 
 // 锁定功能相关
 const isLocked = ref(false) // 是否启用锁定功能
@@ -416,18 +425,41 @@ const openGitHub = () => {
   window.open('https://github.com/SEU-ProactiveSecurity-Group', '_blank')
 }
 
+// 处理滚动事件，控制返回顶部按钮显示
+const handleScroll = (event) => {
+  showBackToTop.value = event.target.scrollTop > 200; // 当页面向下滚动超过200px时显示按钮
+};
+
+// 返回顶部
+const scrollToTop = () => {
+  const container = document.querySelector('.content-area');
+  if (container) {
+    // 使用已有的平滑滚动函数
+    smoothScrollTo(container, 0, 600);
+  }
+};
+
 // 组件挂载时获取数据
 onMounted(async () => {
   checkLockStatus() // 检查锁定状态
   await fetchCategories()
   // 设置默认搜索引擎
   selectedEngine.value = defaultSearchEngine.value
+
+  const container = document.querySelector('.content-area');
+  if (container) {
+    container.addEventListener('scroll', handleScroll);
+  }
 })
 
 // 组件卸载时清理样式
 onUnmounted(() => {
   // 确保卸载时恢复body滚动
   document.body.style.overflow = ''
+  const container = document.querySelector('.content-area');
+  if (container) {
+    container.removeEventListener('scroll', handleScroll);
+  }
 })
 </script>
 
@@ -1477,5 +1509,58 @@ onUnmounted(() => {
 
 .dark .unlock-btn:hover:not(:disabled) {
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+}
+
+/* 返回顶部按钮样式 */
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.back-to-top-btn svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* 暗色模式下的返回顶部按钮 */
+.dark .back-to-top-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .back-to-top-btn:hover {
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* 按钮出现/消失的过渡动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
 }
 </style>
