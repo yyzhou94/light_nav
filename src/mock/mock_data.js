@@ -382,6 +382,13 @@ export const mockData = {
           "url": "https://www.douban.com",
           "description": "吃瓜群众聚集地",
           "icon": "/sitelogo/www.douban.com.ico"
+        },
+        {
+          "id": "site-1757646556177",
+          "name": "福利吧",
+          "url": "https://fuliba.net",
+          "description": "强烈【不建议】在上班时打开",
+          "icon": "https://files.codelife.cc/icons/fuliba2021.net.svg"
         }
       ]
     }
