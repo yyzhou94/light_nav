@@ -313,18 +313,18 @@ export const mockData = {
           "icon": "https://www.json.org/favicon.ico"
         },
         {
+          "id": "site-1757648714789",
+          "name": "Online PDF Edit",
+          "url": "https://onlinepdfedit.com/",
+          "description": "在线PDF编辑器",
+          "icon": "https://onlinepdfedit.com/favicon.ico"
+        },
+        {
           "id": "tinypng",
           "name": "TinyPNG",
           "url": "https://tinypng.com",
           "description": "图片压缩工具",
           "icon": "/sitelogo/tinypng.com.ico"
-        },
-        {
-          "id": "caniuse",
-          "name": "Can I Use",
-          "url": "https://caniuse.com",
-          "description": "浏览器兼容性查询",
-          "icon": "/sitelogo/caniuse.com.ico"
         }
       ]
     },
