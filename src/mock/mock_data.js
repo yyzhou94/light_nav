@@ -349,6 +349,13 @@ export const mockData = {
           "icon": "/sitelogo/www.youtube.com.ico"
         },
         {
+          "id": "site-1757646098932",
+          "name": "88看球",
+          "url": "http://www.88kanqiu.at",
+          "description": "看直播，我只看88看球",
+          "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/National_Basketball_Association_logo.svg/210px-National_Basketball_Association_logo.svg.png"
+        },
+        {
           "id": "site-1757645905981",
           "name": "其乐社区",
           "url": "https://keylol.com/",
@@ -375,13 +382,6 @@ export const mockData = {
           "url": "https://www.douban.com",
           "description": "吃瓜群众聚集地",
           "icon": "/sitelogo/www.douban.com.ico"
-        },
-        {
-          "id": "site-1757646098932",
-          "name": "88看球",
-          "url": "http://www.88kanqiu.at",
-          "description": "看直播，我只看88看球",
-          "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/National_Basketball_Association_logo.svg/210px-National_Basketball_Association_logo.svg.png"
         }
       ]
     }
