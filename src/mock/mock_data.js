@@ -181,8 +181,15 @@ export const mockData = {
           "id": "site-1757657401251",
           "name": "电脑功耗计算器",
           "url": "https://www.pplp.info/calc",
-          "description": "选购电源看这里",
+          "description": "选购电源点这里",
           "icon": "https://www.pplp.info/favicon.ico"
+        },
+        {
+          "id": "site-1757657620284",
+          "name": "appstorrent",
+          "url": "https://appstorrent.ru/",
+          "description": "Mac软件点这里",
+          "icon": "https://www.google.com/s2/favicons?domain=appstorrent.ru&sz=64"
         }
       ]
     },
