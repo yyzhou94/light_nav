@@ -252,7 +252,7 @@ export const mockData = {
           "id": "nodeseek",
           "name": "NodeSeek",
           "url": "https://www.nodeseek.com",
-          "description": "极客技术社区",
+          "description": "MJJ聚集地",
           "icon": "/sitelogo/www.nodeseek.com.ico"
         },
         {
