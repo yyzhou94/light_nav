@@ -333,6 +333,13 @@ export const mockData = {
           "url": "https://www.zhihu.com",
           "description": "知识问答社区",
           "icon": "/sitelogo/www.zhihu.com.ico"
+        },
+        {
+          "id": "site-1757644293950",
+          "name": "小红书",
+          "url": "https://www.xiaohongshu.com",
+          "description": "这里人均年薪百万",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png"
         }
       ]
     }
