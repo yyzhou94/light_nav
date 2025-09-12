@@ -456,7 +456,6 @@ const testImage = async (imageUrl) => {
 }
 
 
-
 // 下载图标并缓存
 const downloadAndCacheIcon = async (iconUrl, domain) => {
   console.log(`📥 开始下载图标: ${iconUrl}`)
@@ -510,14 +509,63 @@ const downloadAndCacheIcon = async (iconUrl, domain) => {
     console.warn(`⚠️ Fetch下载失败: ${fetchError.message}，尝试Canvas方法`)
 
     // 如果fetch失败，使用Canvas方法
-    // try {
-    //   return await downloadIconViaCanvas(iconUrl, domain)
-    // } catch (canvasError) {
-    //   console.error(`❌ Canvas下载也失败: ${canvasError.message}`)
-    //   throw new Error(`所有下载方法都失败: Fetch(${fetchError.message}), Canvas(${canvasError.message})`)
-    // }
+    try {
+      return await downloadIconViaCanvas(iconUrl, domain)
+    } catch (canvasError) {
+      console.error(`❌ Canvas下载也失败: ${canvasError.message}`)
+      throw new Error(`所有下载方法都失败: Fetch(${fetchError.message}), Canvas(${canvasError.message})`)
+    }
   }
 }
+
+// 新增：通过Canvas下载图标的函数
+const downloadIconViaCanvas = (imageUrl, domain) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    // 关键：必须设置crossOrigin，否则Canvas会变“脏”，无法导出数据
+    img.crossOrigin = 'Anonymous';
+
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+
+      // 从Canvas中提取Blob数据
+      canvas.toBlob(async (blob) => {
+        if (!blob || blob.size < 100) {
+          return reject(new Error(`Canvas提取的Blob文件过小 (${blob.size} bytes)`));
+        }
+
+        const arrayBuffer = await blob.arrayBuffer();
+        const fileName = `${domain}.ico`;
+        const localPath = `/sitelogo/${fileName}`;
+        const dataUrl = URL.createObjectURL(blob);
+
+        // 将图标数据缓存到内存中
+        pendingIcons.value.set(domain, { arrayBuffer, fileName, localPath, domain });
+
+        // 缓存预览URL
+        const oldPreview = iconPreviews.value.get(localPath);
+        if (oldPreview) {
+          URL.revokeObjectURL(oldPreview);
+        }
+        iconPreviews.value.set(localPath, dataUrl);
+
+        console.log(`✅ Canvas下载成功: ${localPath}，文件大小: ${arrayBuffer.byteLength} bytes`);
+        resolve(localPath);
+      });
+    };
+
+    img.onerror = (err) => {
+      reject(new Error(`图片加载失败，无法用于Canvas: ${err.type}`));
+    };
+
+    // 必须在设置onerror和onload之后再设置src
+    img.src = imageUrl;
+  });
+};
 
 // 上传所有待处理的图标到GitHub（串行上传避免冲突）
 const uploadPendingIconsToGitHub = async () => {
