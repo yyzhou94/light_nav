@@ -85,6 +85,13 @@ export const mockData = {
           "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/1920px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png"
         },
         {
+          "id": "site-1757645220919",
+          "name": "Nature",
+          "url": "https://www.nature.com/",
+          "description": "Nature论文看个乐",
+          "icon": "https://www.google.com/s2/favicons?domain=www.nature.com&sz=64"
+        },
+        {
           "id": "site-1757511883821",
           "name": "中国知网",
           "url": "https://www.cnki.net/",
