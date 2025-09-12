@@ -144,11 +144,10 @@
           <div class="mobile-menu-header">
             <div class="header-left">
               <h3>分类导航</h3>
-              <img :src="githubLogo" alt="GitHub" class="header-github-icon" @click="openGitHub" />
             </div>
             <button class="close-btn" @click="closeMobileMenu">×</button>
           </div>
-                    <ul class="mobile-category-list">
+          <ul class="mobile-category-list">
             <li
               v-for="category in categories"
               :key="category.id"
@@ -166,7 +165,7 @@
       </header>
 
       <!-- 导航内容区 -->
-      <div class="content-area">
+      <div class="content-area" ref="contentArea">
         <!-- 加载状态 -->
         <div v-if="loading" class="loading">
           <div class="loading-spinner"></div>
@@ -335,6 +334,33 @@ const unlockPassword = ref('') // 解锁密码输入
 const unlocking = ref(false) // 解锁中状态
 const unlockError = ref('') // 解锁错误信息
 
+// 移动端菜单控制
+const toggleMobileMenu = () => {
+  showMobileMenu.value = !showMobileMenu.value;
+  // 控制body滚动
+  if (showMobileMenu.value) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+};
+
+const closeMobileMenu = () => {
+  showMobileMenu.value = false;
+  // 恢复body滚动
+  document.body.style.overflow = '';
+};
+
+// 移动端分类滚动
+const scrollToCategoryMobile = (categoryId) => {
+  closeMobileMenu(); // 先关闭菜单
+
+  // 稍微延迟一下再滚动，确保菜单关闭动画完成
+  setTimeout(() => {
+    scrollToCategory(categoryId);
+  }, 200);
+};
+
 // 搜索引擎配置
 const searchEngines = {
   google: {
@@ -472,33 +498,6 @@ const handleImageError = (event) => {
   // 设置默认的 favicon.ico 作为 fallback 图片
   event.target.src = '/favicon.ico'
   event.target.onerror = null // 防止无限循环
-}
-
-// 移动端菜单控制
-const toggleMobileMenu = () => {
-  showMobileMenu.value = !showMobileMenu.value
-  // 控制body滚动
-  if (showMobileMenu.value) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = ''
-  }
-}
-
-const closeMobileMenu = () => {
-  showMobileMenu.value = false
-  // 恢复body滚动
-  document.body.style.overflow = ''
-}
-
-// 移动端分类滚动
-const scrollToCategoryMobile = (categoryId) => {
-  closeMobileMenu() // 先关闭菜单
-
-  // 稍微延迟一下再滚动，确保菜单关闭动画完成
-  setTimeout(() => {
-    scrollToCategory(categoryId)
-  }, 200)
 }
 
 // 打开GitHub项目页面
@@ -1613,5 +1612,116 @@ onUnmounted(() => {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(20px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .nav-home {
+    flex-direction: column;
+    height: 100vh;
+    height: 100svh; /* 使用动态视口高度 */
+    overflow: hidden;
+  }
+
+  .sidebar {
+    display: none; /* 在移动端隐藏左侧边栏 */
+  }
+
+  .main-content {
+    flex: 1;
+    height: 100vh;
+    height: 100svh; /* 使用动态视口高度，更准确 */
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .search-header {
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .content-area {
+    flex: 1;
+    padding: 20px 15px;
+    padding-top: 100px; /* 为固定的搜索框留出空间 */
+    padding-bottom: 300px; /* 增加底部padding确保内容可以完全滚动 */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* iOS平滑滚动 */
+  }
+
+  .mobile-menu-btn {
+    display: block; /* 在移动端显示菜单按钮 */
+    flex-shrink: 0;
+  }
+
+  .sites-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .site-card {
+    padding: 12px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-card .site-icon {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .site-card .site-name {
+    font-size: 15px;
+  }
+
+  .site-card .site-description {
+    font-size: 12px;
+  }
+
+  .category-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .category-title .category-icon {
+    font-size: 28px;
+    margin-right: 12px;
+  }
+
+  .category-title .category-name {
+    font-size: 22px;
+  }
+
+  /* 移动端页面底部 */
+  .page-footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    padding-top: 15px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
 }
 </style>
