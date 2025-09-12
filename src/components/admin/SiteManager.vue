@@ -456,6 +456,7 @@ const testImage = async (imageUrl) => {
 }
 
 
+
 // 下载图标并缓存
 const downloadAndCacheIcon = async (iconUrl, domain) => {
   console.log(`📥 开始下载图标: ${iconUrl}`)
@@ -509,63 +510,14 @@ const downloadAndCacheIcon = async (iconUrl, domain) => {
     console.warn(`⚠️ Fetch下载失败: ${fetchError.message}，尝试Canvas方法`)
 
     // 如果fetch失败，使用Canvas方法
-    try {
-      return await downloadIconViaCanvas(iconUrl, domain)
-    } catch (canvasError) {
-      console.error(`❌ Canvas下载也失败: ${canvasError.message}`)
-      throw new Error(`所有下载方法都失败: Fetch(${fetchError.message}), Canvas(${canvasError.message})`)
-    }
+    // try {
+    //   return await downloadIconViaCanvas(iconUrl, domain)
+    // } catch (canvasError) {
+    //   console.error(`❌ Canvas下载也失败: ${canvasError.message}`)
+    //   throw new Error(`所有下载方法都失败: Fetch(${fetchError.message}), Canvas(${canvasError.message})`)
+    // }
   }
 }
-
-// 新增：通过Canvas下载图标的函数
-const downloadIconViaCanvas = (imageUrl, domain) => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    // 关键：必须设置crossOrigin，否则Canvas会变“脏”，无法导出数据
-    img.crossOrigin = 'Anonymous';
-
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0);
-
-      // 从Canvas中提取Blob数据
-      canvas.toBlob(async (blob) => {
-        if (!blob || blob.size < 100) {
-          return reject(new Error(`Canvas提取的Blob文件过小 (${blob.size} bytes)`));
-        }
-
-        const arrayBuffer = await blob.arrayBuffer();
-        const fileName = `${domain}.ico`;
-        const localPath = `/sitelogo/${fileName}`;
-        const dataUrl = URL.createObjectURL(blob);
-
-        // 将图标数据缓存到内存中
-        pendingIcons.value.set(domain, { arrayBuffer, fileName, localPath, domain });
-
-        // 缓存预览URL
-        const oldPreview = iconPreviews.value.get(localPath);
-        if (oldPreview) {
-          URL.revokeObjectURL(oldPreview);
-        }
-        iconPreviews.value.set(localPath, dataUrl);
-
-        console.log(`✅ Canvas下载成功: ${localPath}，文件大小: ${arrayBuffer.byteLength} bytes`);
-        resolve(localPath);
-      });
-    };
-
-    img.onerror = (err) => {
-      reject(new Error(`图片加载失败，无法用于Canvas: ${err.type}`));
-    };
-
-    // 必须在设置onerror和onload之后再设置src
-    img.src = imageUrl;
-  });
-};
 
 // 上传所有待处理的图标到GitHub（串行上传避免冲突）
 const uploadPendingIconsToGitHub = async () => {
@@ -623,8 +575,6 @@ const tryFallbackServices = async (domain) => {
   // 支持多个favicon服务轮询尝试
   const iconServiceUrls = [
     `https://www.google.com/s2/favicons?domain=${domain}&sz=64`,
-    `https://www.faviconextractor.com/favicon/${domain}`,
-    `https://icon.maodeyu.fun/favicon/${domain}`,
   ]
 
   for (const iconServiceUrl of iconServiceUrls) {
@@ -636,25 +586,27 @@ const tryFallbackServices = async (domain) => {
       // console.log(`✅ 图标测试通过: ${iconServiceUrl}`)
 
       // 下载并缓存到内存（包含降级策略）
-      try {
-        const localPath = await downloadAndCacheIcon(iconServiceUrl, domain)
+      const localPath = await downloadAndCacheIcon(iconServiceUrl, domain)
+      // 如果 downloadAndCacheIcon 成功，它会返回一个路径
+      if (localPath) {
         formData.value.icon = localPath
         iconError.value = false
         console.log(`✅ 成功下载并缓存图标: ${iconServiceUrl}`)
-        return
-      } catch (error) {
-        console.log(`❌ 图标服务失败:`, iconServiceUrl, error.message)
+        return // 成功后立即退出整个函数
       }
     } catch (error) {
+      // downloadAndCacheIcon 抛出错误时，会进入这里
       console.log(`❌ 图标服务失败:`, iconServiceUrl, error.message)
-      // 继续尝试下一个服务
+      // 什么都不做，让 for 循环继续尝试下一个 URL (如果有的话)
     }
   }
 
-  //const fallbackUrl = `https://www.faviconextractor.com/favicon/${domain}`
+  // 如果 for 循环走完了都没有成功，代码才会执行到这里
+  console.log('所有图标服务均失败，尝试标准 favicon.ico 路径');
 
   // 回退到标准favicon.ico路径
-  const fallbackUrl = `https://${domain}/favicon.ico`
+  // const fallbackUrl = `https://${domain}/favicon.ico`
+  const fallbackUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
 
   try {
     console.log(`🔍 尝试标准路径:`, fallbackUrl)
