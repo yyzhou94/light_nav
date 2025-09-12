@@ -64,6 +64,13 @@ export const mockData = {
           "icon": "https://www.google.com/s2/favicons?domain=https://arxiv.org&sz=64"
         },
         {
+          "id": "site-1757643616491",
+          "name": "ResearchGate",
+          "url": "https://www.researchgate.net/",
+          "description": "下载不到的论文直接找作者要",
+          "icon": "https://www.researchgate.net/favicon.ico"
+        },
+        {
           "id": "site-1757511883821",
           "name": "中国知网",
           "url": "https://www.cnki.net/",
