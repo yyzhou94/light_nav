@@ -366,7 +366,7 @@ export const mockData = {
     },
     {
       "id": "entertainment",
-      "name": "娱乐休闲",
+      "name": "休闲娱乐",
       "icon": "🎮",
       "order": 7,
       "sites": [
