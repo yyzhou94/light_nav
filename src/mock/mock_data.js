@@ -164,32 +164,32 @@ export const mockData = {
           "icon": "/sitelogo/vercel.com.ico"
         },
         {
-          "id": "aws",
-          "name": "AWS",
-          "url": "https://aws.amazon.com",
-          "description": "亚马逊云服务",
-          "icon": "/sitelogo/aws.amazon.com.ico"
+          "id": "huawei-cloud",
+          "name": "华为云",
+          "url": "https://www.huaweicloud.com",
+          "description": "遥遥领先！",
+          "icon": "/sitelogo/www.huaweicloud.com.ico"
         },
         {
           "id": "aliyun",
           "name": "阿里云",
           "url": "https://www.aliyun.com",
-          "description": "阿里巴巴云计算",
+          "description": "阿里巴巴是个快乐的青年",
           "icon": "/sitelogo/www.aliyun.com.ico"
         },
         {
-          "id": "tencent-cloud",
-          "name": "腾讯云",
-          "url": "https://cloud.tencent.com",
-          "description": "腾讯云计算服务",
-          "icon": "/sitelogo/cloud.tencent.com.ico"
+          "id": "site-1757643954499",
+          "name": "Google Cloud",
+          "url": "https://cloud.google.com/",
+          "description": "他家的流量是金子做的",
+          "icon": "https://cloud.google.com/favicon.ico"
         },
         {
-          "id": "huawei-cloud",
-          "name": "华为云",
-          "url": "https://www.huaweicloud.com",
-          "description": "华为云计算服务",
-          "icon": "/sitelogo/www.huaweicloud.com.ico"
+          "id": "site-1757644023506",
+          "name": "Micosoft Azure",
+          "url": "https://azure.microsoft.com/",
+          "description": "巨硬太抠搜",
+          "icon": "https://azure.microsoft.com/favicon.ico"
         },
         {
           "id": "site-1757502443881",
