@@ -185,10 +185,17 @@ export const mockData = {
           "icon": "https://www.pplp.info/favicon.ico"
         },
         {
+          "id": "site-1757657733836",
+          "name": "MacKed",
+          "url": "https://macked.app",
+          "description": "Mac软件点这里",
+          "icon": "https://www.google.com/s2/favicons?domain=macked.app&sz=64"
+        },
+        {
           "id": "site-1757657620284",
           "name": "appstorrent",
-          "url": "https://appstorrent.ru/",
-          "description": "Mac软件点这里",
+          "url": "https://appstorrent.ru",
+          "description": "Mac软件也可以点这里",
           "icon": "https://www.google.com/s2/favicons?domain=appstorrent.ru&sz=64"
         }
       ]
