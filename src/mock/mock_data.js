@@ -310,36 +310,36 @@ export const mockData = {
           "id": "bilibili",
           "name": "哔哩哔哩",
           "url": "https://www.bilibili.com",
-          "description": "弹幕视频网站",
+          "description": "鬼畜已死",
           "icon": "/sitelogo/www.bilibili.com.ico"
         },
         {
           "id": "youtube",
           "name": "YouTube",
           "url": "https://www.youtube.com",
-          "description": "视频分享平台",
+          "description": "怀念IPv6直连的日子",
           "icon": "/sitelogo/www.youtube.com.ico"
-        },
-        {
-          "id": "douban",
-          "name": "豆瓣",
-          "url": "https://www.douban.com",
-          "description": "文艺生活社区",
-          "icon": "/sitelogo/www.douban.com.ico"
-        },
-        {
-          "id": "zhihu",
-          "name": "知乎",
-          "url": "https://www.zhihu.com",
-          "description": "知识问答社区",
-          "icon": "/sitelogo/www.zhihu.com.ico"
         },
         {
           "id": "site-1757644293950",
           "name": "小红书",
           "url": "https://www.xiaohongshu.com",
-          "description": "这里人均年薪百万",
+          "description": "集美人均年薪百万",
           "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png"
+        },
+        {
+          "id": "zhihu",
+          "name": "知乎",
+          "url": "https://www.zhihu.com",
+          "description": "注意！装逼犯出没",
+          "icon": "/sitelogo/www.zhihu.com.ico"
+        },
+        {
+          "id": "douban",
+          "name": "豆瓣",
+          "url": "https://www.douban.com",
+          "description": "吃瓜群众聚集地",
+          "icon": "/sitelogo/www.douban.com.ico"
         }
       ]
     }
