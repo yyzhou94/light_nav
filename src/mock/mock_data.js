@@ -260,7 +260,7 @@ export const mockData = {
           "name": "吾爱破解",
           "url": "https://www.52pojie.cn/",
           "description": "软件安全与破解技术论坛",
-          "icon": "/sitelogo/www.52pojie.cn.ico"
+          "icon": "https://www.52pojie.cn/favicon.ico"
         }
       ]
     },
