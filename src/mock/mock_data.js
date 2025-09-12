@@ -71,6 +71,20 @@ export const mockData = {
           "icon": "https://www.researchgate.net/favicon.ico"
         },
         {
+          "id": "site-1757644828703",
+          "name": "IEEE Xplore",
+          "url": "https://ieeexplore.ieee.org/Xplore/home.jsp",
+          "description": "IEEE论文点这里",
+          "icon": "https://www.google.com/s2/favicons?domain=www.ieee.org&sz=64"
+        },
+        {
+          "id": "site-1757645131517",
+          "name": "ACM Digital Library",
+          "url": "https://dl.acm.org/",
+          "description": "ACM论文点这里",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/1920px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png"
+        },
+        {
           "id": "site-1757511883821",
           "name": "中国知网",
           "url": "https://www.cnki.net/",
