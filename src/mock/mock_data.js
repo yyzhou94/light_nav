@@ -349,6 +349,13 @@ export const mockData = {
           "icon": "/sitelogo/www.youtube.com.ico"
         },
         {
+          "id": "site-1757645905981",
+          "name": "其乐社区",
+          "url": "https://keylol.com/",
+          "description": "其乐融融的游戏社区",
+          "icon": "https://keylol.com/favicon.ico"
+        },
+        {
           "id": "site-1757644293950",
           "name": "小红书",
           "url": "https://www.xiaohongshu.com",
