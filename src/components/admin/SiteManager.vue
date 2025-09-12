@@ -456,69 +456,6 @@ const testImage = async (imageUrl) => {
 }
 
 
-
-// 下载图标并缓存
-const downloadAndCacheIcon = async (iconUrl, domain) => {
-  console.log(`📥 开始下载图标: ${iconUrl}`)
-
-  // 优先尝试fetch直接下载
-  try {
-    const response = await fetch(iconUrl, {
-      mode: 'cors',
-      credentials: 'omit',
-      headers: {
-        'Accept': 'image/*,*/*;q=0.8'
-      }
-    })
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`)
-    }
-
-    const arrayBuffer = await response.arrayBuffer()
-
-    if (arrayBuffer.byteLength < 100) {
-      throw new Error(`图标文件过小 (${arrayBuffer.byteLength} bytes)`)
-    }
-
-    // 创建本地文件路径和文件名
-    const fileName = `${domain}.ico`
-    const localPath = `/sitelogo/${fileName}`
-
-    // 创建data URL用于编辑期间的预览
-    const blob = new Blob([arrayBuffer], { type: 'image/x-icon' })
-    const dataUrl = URL.createObjectURL(blob)
-
-    // 将图标数据缓存到内存中，等待后续上传
-    pendingIcons.value.set(domain, {
-      arrayBuffer,
-      fileName,
-      localPath,
-      domain
-    })
-
-    // 缓存预览URL，用于编辑期间显示
-    const oldPreview = iconPreviews.value.get(localPath)
-    if (oldPreview) {
-      URL.revokeObjectURL(oldPreview)
-    }
-    iconPreviews.value.set(localPath, dataUrl)
-
-    console.log(`✅ Fetch下载成功: ${localPath}，文件大小: ${arrayBuffer.byteLength} bytes`)
-    return localPath
-  } catch (fetchError) {
-    console.warn(`⚠️ Fetch下载失败: ${fetchError.message}，尝试Canvas方法`)
-
-    // 如果fetch失败，使用Canvas方法
-    // try {
-    //   return await downloadIconViaCanvas(iconUrl, domain)
-    // } catch (canvasError) {
-    //   console.error(`❌ Canvas下载也失败: ${canvasError.message}`)
-    //   throw new Error(`所有下载方法都失败: Fetch(${fetchError.message}), Canvas(${canvasError.message})`)
-    // }
-  }
-}
-
 // 上传所有待处理的图标到GitHub（串行上传避免冲突）
 const uploadPendingIconsToGitHub = async () => {
   const icons = Array.from(pendingIcons.value.values())
@@ -571,72 +508,33 @@ const uploadPendingIconsToGitHub = async () => {
 
 // 获取favicon图标
 const tryFallbackServices = async (domain) => {
-  // 首先尝试icon服务
-  // 支持多个favicon服务轮询尝试
-  const iconServiceUrls = [
-    `https://www.google.com/s2/favicons?domain=${domain}&sz=64`,
-  ]
+  // 定义要按顺序尝试的图标URL
+  const iconUrlsToTry = [
+    `https://${domain}/favicon.ico`, // 1. 优先尝试网站自己的标准favicon
+    `https://www.google.com/s2/favicons?domain=${domain}&sz=64`, // 2. 如果上面失败，使用Google的服务
+  ];
 
-  for (const iconServiceUrl of iconServiceUrls) {
+  for (const url of iconUrlsToTry) {
     try {
-      console.log(`🔍 尝试图标服务:`, iconServiceUrl)
+      // 使用 testImage 函数来验证 URL 是否指向一个有效的图片
+      await testImage(url);
 
-      // 先测试图标是否可用
-      // await testImage(iconServiceUrl)
-      // console.log(`✅ 图标测试通过: ${iconServiceUrl}`)
+      // 如果 testImage 没有抛出错误，说明 URL 有效
+      console.log(`✅ 找到可用图标链接: ${url}`);
+      formData.value.icon = url; // 直接将有效的 URL 赋值
+      iconError.value = false;
+      return; // 成功找到，立即退出函数
 
-      // 下载并缓存到内存（包含降级策略）
-      const localPath = await downloadAndCacheIcon(iconServiceUrl, domain)
-      // 如果 downloadAndCacheIcon 成功，它会返回一个路径
-      if (localPath) {
-        formData.value.icon = localPath
-        iconError.value = false
-        console.log(`✅ 成功下载并缓存图标: ${iconServiceUrl}`)
-        return // 成功后立即退出整个函数
-      }
     } catch (error) {
-      // downloadAndCacheIcon 抛出错误时，会进入这里
-      console.log(`❌ 图标服务失败:`, iconServiceUrl, error.message)
-      // 什么都不做，让 for 循环继续尝试下一个 URL (如果有的话)
+      // 如果 testImage 抛出错误，说明此 URL 无效
+      console.log(`❌ 此链接无效: ${url}，原因: ${error.message}`);
+      // 继续循环，尝试下一个链接
     }
   }
 
-  // 如果 for 循环走完了都没有成功，代码才会执行到这里
-  console.log('所有图标服务均失败，尝试标准 favicon.ico 路径');
-
-  // 回退到标准favicon.ico路径
-  // const fallbackUrl = `https://${domain}/favicon.ico`
-  const fallbackUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
-
-  try {
-    console.log(`🔍 尝试标准路径:`, fallbackUrl)
-
-    // 先测试图标是否可用
-    await testImage(fallbackUrl)
-    formData.value.icon = fallbackUrl
-    iconError.value = false
-    console.log(`✅ 直接使用标准favicon.ico URL`)
-    return
-    // // 下载并缓存到内存（包含降级策略）
-    // try {
-    //   const localPath = await downloadAndCacheIcon(fallbackUrl, domain)
-    //   formData.value.icon = localPath
-    //   iconError.value = false
-    //   console.log(`✅ 标准路径下载并缓存成功`)
-    //   return
-    // } catch (downloadError) {
-    //   console.warn(`⚠️ 标准路径所有下载方法都失败，但图标可用，直接使用URL: ${downloadError.message}`)
-    //   // 如果所有下载方法都失败但测试通过，直接使用URL
-    //   formData.value.icon = fallbackUrl
-    //   iconError.value = false
-    //   console.log(`✅ 直接使用标准favicon.ico URL`)
-    //   return
-    // }
-  } catch (error) {
-    console.log(`❌ 标准路径也失败:`, error.message)
-    console.error('❌ 无法获取网站图标')
-    alert('❌ 无法获取网站图标，请手动输入图标URL。\n\n💡 建议使用网站的 favicon.ico 或其他图标链接。')
-  }
+  // 如果循环走完都没有找到可用的链接
+  console.error('❌ 所有自动获取图标的方法均失败');
+  alert('❌ 无法自动获取网站图标，请尝试手动输入图标URL。');
 }
 
 // 自动检测图标
