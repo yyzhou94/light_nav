@@ -44,7 +44,7 @@ export const mockData = {
       "sites": [
         {
           "id": "site-1757497852836",
-          "name": "谷歌学术",
+          "name": "Google Scholar",
           "url": "https://scholar.google.com/",
           "description": "站在巨人的肩膀上",
           "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
