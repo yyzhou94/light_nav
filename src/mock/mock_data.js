@@ -176,6 +176,13 @@ export const mockData = {
           "url": "https://www.expreview.com",
           "description": "CPU、GPU、电源天梯图",
           "icon": "https://www.expreview.com/favicon.ico"
+        },
+        {
+          "id": "site-1757657401251",
+          "name": "电脑功耗计算器",
+          "url": "https://www.pplp.info/calc",
+          "description": "选购电源看这里",
+          "icon": "https://www.pplp.info/favicon.ico"
         }
       ]
     },
