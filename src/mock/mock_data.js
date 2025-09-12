@@ -169,7 +169,15 @@ export const mockData = {
       "icon": "💻",
       "name": "玩机宝典",
       "order": 3,
-      "sites": []
+      "sites": [
+        {
+          "id": "site-1757657243337",
+          "name": "超能网",
+          "url": "https://www.expreview.com",
+          "description": "CPU、GPU、电源天梯图",
+          "icon": "https://www.expreview.com/favicon.ico"
+        }
+      ]
     },
     {
       "id": "community",
