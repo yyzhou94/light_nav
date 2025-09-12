@@ -38,7 +38,7 @@ export const mockData = {
     },
     {
       "id": "dev-tools",
-      "name": "科研工具",
+      "name": "科研工作",
       "icon": "🛠️",
       "order": 1,
       "sites": [
@@ -230,7 +230,7 @@ export const mockData = {
     },
     {
       "id": "community",
-      "name": "社区论坛",
+      "name": "技术论坛",
       "icon": "👥",
       "order": 4,
       "sites": [
