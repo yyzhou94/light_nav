@@ -61,7 +61,14 @@ export const mockData = {
           "name": "arXiv",
           "url": "https://arxiv.org",
           "description": "预印论文点这里",
-          "icon": "https://avatars.githubusercontent.com/u/45442578?s=200&v=4"
+          "icon": "https://www.google.com/s2/favicons?domain=arxiv.org&sz=64"
+        },
+        {
+          "id": "site-1757643456688",
+          "name": "ResearchGate",
+          "url": "https://www.researchgate.net/",
+          "description": "找不到的论文试试这里",
+          "icon": "https://www.google.com/s2/favicons?domain=www.researchgate.net&sz=64"
         },
         {
           "id": "site-1757511883821",
