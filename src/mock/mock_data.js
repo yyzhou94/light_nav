@@ -300,10 +300,10 @@ export const mockData = {
       "sites": [
         {
           "id": "json-formatter",
-          "name": "JSON Formatter",
-          "url": "https://jsonformatter.org",
-          "description": "JSON格式化工具",
-          "icon": "/sitelogo/jsonformatter.org.ico"
+          "name": "JSON生成器",
+          "url": "https://nezhainfojson.pages.dev",
+          "description": "监控数据JSON生成器",
+          "icon": "https://www.json.org/favicon.ico"
         },
         {
           "id": "regex101",
