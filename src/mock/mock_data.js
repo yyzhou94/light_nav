@@ -339,7 +339,7 @@ export const mockData = {
           "name": "哔哩哔哩",
           "url": "https://www.bilibili.com",
           "description": "鬼畜已死",
-          "icon": "/sitelogo/www.bilibili.com.ico"
+          "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ98xbsbAXx6lIUNYOPyIfooASMHIfnN185Rg&s"
         },
         {
           "id": "youtube",
