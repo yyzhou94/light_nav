@@ -165,68 +165,11 @@ export const mockData = {
       ]
     },
     {
-      "id": "cloud",
-      "name": "云服务",
-      "icon": "☁️",
+      "id": "category-1757656757139",
+      "icon": "💻",
+      "name": "玩机宝典",
       "order": 3,
-      "sites": [
-        {
-          "id": "cloudflare",
-          "name": "Cloudflare",
-          "url": "https://www.cloudflare.com",
-          "description": "全球CDN和网络安全服务",
-          "icon": "/sitelogo/www.cloudflare.com.ico"
-        },
-        {
-          "id": "vercel",
-          "name": "Vercel",
-          "url": "https://vercel.com",
-          "description": "前端部署平台",
-          "icon": "/sitelogo/vercel.com.ico"
-        },
-        {
-          "id": "huawei-cloud",
-          "name": "华为云",
-          "url": "https://www.huaweicloud.com",
-          "description": "遥遥领先！",
-          "icon": "/sitelogo/www.huaweicloud.com.ico"
-        },
-        {
-          "id": "aliyun",
-          "name": "阿里云",
-          "url": "https://www.aliyun.com",
-          "description": "阿里巴巴是个快乐的青年",
-          "icon": "/sitelogo/www.aliyun.com.ico"
-        },
-        {
-          "id": "site-1757643954499",
-          "name": "Google Cloud",
-          "url": "https://cloud.google.com/",
-          "description": "他家的流量是金子做的",
-          "icon": "https://cloud.google.com/favicon.ico"
-        },
-        {
-          "id": "site-1757644023506",
-          "name": "Micosoft Azure",
-          "url": "https://azure.microsoft.com/",
-          "description": "巨硬太抠搜",
-          "icon": "https://azure.microsoft.com/favicon.ico"
-        },
-        {
-          "id": "site-1757502443881",
-          "name": "Netcup",
-          "url": "https://www.netcup.com/en/",
-          "description": "固执、拖拉的德国佬",
-          "icon": "https://netcup.cafe/system/accounts/avatars/112/710/068/814/599/782/original/de4b304b31f0b8f6.png"
-        },
-        {
-          "id": "site-1757502722681",
-          "name": "GreenCloud",
-          "url": "https://greencloudvps.com/",
-          "description": "爱是一道光",
-          "icon": "https://pbs.twimg.com/profile_images/1707313098175250432/F4iM1Dr__400x400.jpg"
-        }
-      ]
+      "sites": []
     },
     {
       "id": "community",
@@ -296,7 +239,7 @@ export const mockData = {
       "id": "tools",
       "name": "在线工具",
       "icon": "⚙️",
-      "order": 6,
+      "order": 5,
       "sites": [
         {
           "id": "site-1757648310091",
@@ -325,6 +268,70 @@ export const mockData = {
           "url": "https://tinypng.com",
           "description": "图片压缩工具",
           "icon": "/sitelogo/tinypng.com.ico"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "云服务",
+      "icon": "☁️",
+      "order": 6,
+      "sites": [
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare",
+          "url": "https://www.cloudflare.com",
+          "description": "全球CDN和网络安全服务",
+          "icon": "/sitelogo/www.cloudflare.com.ico"
+        },
+        {
+          "id": "vercel",
+          "name": "Vercel",
+          "url": "https://vercel.com",
+          "description": "前端部署平台",
+          "icon": "/sitelogo/vercel.com.ico"
+        },
+        {
+          "id": "huawei-cloud",
+          "name": "华为云",
+          "url": "https://www.huaweicloud.com",
+          "description": "遥遥领先！",
+          "icon": "/sitelogo/www.huaweicloud.com.ico"
+        },
+        {
+          "id": "aliyun",
+          "name": "阿里云",
+          "url": "https://www.aliyun.com",
+          "description": "阿里巴巴是个快乐的青年",
+          "icon": "/sitelogo/www.aliyun.com.ico"
+        },
+        {
+          "id": "site-1757643954499",
+          "name": "Google Cloud",
+          "url": "https://cloud.google.com/",
+          "description": "他家的流量是金子做的",
+          "icon": "https://cloud.google.com/favicon.ico"
+        },
+        {
+          "id": "site-1757644023506",
+          "name": "Micosoft Azure",
+          "url": "https://azure.microsoft.com/",
+          "description": "巨硬太抠搜",
+          "icon": "https://azure.microsoft.com/favicon.ico"
+        },
+        {
+          "id": "site-1757502443881",
+          "name": "Netcup",
+          "url": "https://www.netcup.com/en/",
+          "description": "固执、拖拉的德国佬",
+          "icon": "https://netcup.cafe/system/accounts/avatars/112/710/068/814/599/782/original/de4b304b31f0b8f6.png"
+        },
+        {
+          "id": "site-1757502722681",
+          "name": "GreenCloud",
+          "url": "https://greencloudvps.com/",
+          "description": "爱是一道光",
+          "icon": "https://pbs.twimg.com/profile_images/1707313098175250432/F4iM1Dr__400x400.jpg"
         }
       ]
     },
