@@ -289,7 +289,7 @@ export const mockData = {
           "name": "Online PDF Edit",
           "url": "https://onlinepdfedit.com/",
           "description": "在线PDF编辑器",
-          "icon": "https://onlinepdfedit.com/favicon.ico"
+          "icon": "https://www.google.com/s2/favicons?domain=onlinepdfedit.com&sz=64"
         },
         {
           "id": "tinypng",
