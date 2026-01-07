@@ -232,7 +232,7 @@ export const mockData = {
           "name": "NodeLoc",
           "url": "https://www.nodeloc.com",
           "description": "自由、平等、友好、开放、有趣",
-          "icon": "https://freex.nodeloc.com/storage/logo.webp"
+          "icon": "https://www.google.com/s2/favicons?domain=www.nodeloc.com&sz=64"
         },
         {
           "id": "site-1757645518755",
