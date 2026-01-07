@@ -353,7 +353,7 @@ export const mockData = {
           "name": "Netcup",
           "url": "https://www.netcup.com/en/",
           "description": "固执、拖拉的德国佬",
-          "icon": "https://netcup.cafe/system/accounts/avatars/112/710/068/814/599/782/original/de4b304b31f0b8f6.png"
+          "icon": "https://www.netcup.com/favicon.ico"
         },
         {
           "id": "site-1757502722681",
