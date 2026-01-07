@@ -175,7 +175,7 @@ export const mockData = {
           "name": "超能网",
           "url": "https://www.expreview.com",
           "description": "CPU、GPU、电源天梯图",
-          "icon": "https://www.expreview.com/favicon.ico"
+          "icon": "https://www.google.com/s2/favicons?domain=www.expreview.com&sz=64"
         },
         {
           "id": "site-1757657401251",
