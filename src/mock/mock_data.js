@@ -281,7 +281,7 @@ export const mockData = {
           "id": "site-1776255854889",
           "name": "VPS助手",
           "url": "https://vps.cybersecur1ty.de",
-          "description": "",
+          "description": "最最常用的vps命令",
           "icon": "https://vps.cybersecur1ty.de/logo.png"
         },
         {
