@@ -278,6 +278,13 @@ export const mockData = {
           "icon": "https://sub.cybersecur1ty.de/favicon.ico"
         },
         {
+          "id": "site-1776255793409",
+          "name": "VPS助手",
+          "url": "https://vps.cybersecur1ty.de/",
+          "description": "",
+          "icon": "https://vps.cybersecur1ty.de/logo.png"
+        },
+        {
           "id": "json-formatter",
           "name": "JSON生成器",
           "url": "https://nezhainfojson.pages.dev",
