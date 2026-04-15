@@ -278,9 +278,9 @@ export const mockData = {
           "icon": "https://sub.cybersecur1ty.de/favicon.ico"
         },
         {
-          "id": "site-1776255793409",
+          "id": "site-1776255854889",
           "name": "VPS助手",
-          "url": "https://vps.cybersecur1ty.de/",
+          "url": "https://vps.cybersecur1ty.de",
           "description": "",
           "icon": "https://vps.cybersecur1ty.de/logo.png"
         },
