@@ -273,9 +273,9 @@ export const mockData = {
         {
           "id": "site-1757648310091",
           "name": "在线订阅转换工具",
-          "url": "https://sub.cybersecur1ty.de/",
+          "url": "https://suburl.v1.mk/",
           "description": "【切记】低调使用",
-          "icon": "https://sub.cybersecur1ty.de/favicon.ico"
+          "icon": "https://suburl.v1.mk/favicon.ico"
         },
         {
           "id": "site-1776255854889",
